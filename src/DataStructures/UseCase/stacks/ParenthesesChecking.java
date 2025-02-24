@@ -2,7 +2,7 @@ package DataStructures.UseCase.stacks;
 
 import java.util.*;
 
-public class ParenthesisChecking {
+public class ParenthesesChecking {
 
     public static void main(String[] args) {
 
