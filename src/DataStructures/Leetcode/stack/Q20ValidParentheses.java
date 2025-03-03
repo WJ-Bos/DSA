@@ -1,11 +1,12 @@
 package DataStructures.Leetcode.stack;
 
+import java.util.Map;
+import java.util.Stack;
+
 public class Q20ValidParentheses {
     /**
      * PROBLEM:
-     *
      * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-     *
      * An input string is valid if:
      *
      * Open brackets must be closed by the same type of brackets.
@@ -26,4 +27,23 @@ public class Q20ValidParentheses {
      * 1 <= s.length <= 104
      * s consists of parentheses only '()[]{}'.
      */
+
+    public boolean isValid(String s) {
+
+        Stack<Character> charStack = new Stack<>();
+        Map<Character, Character> pairs = Map.of(
+                ')','(',']','[','}','{');
+
+
+        for(char c : s.toCharArray()) {
+            if(pairs.containsValue(c)){
+                charStack.push(c);
+            }else if(pairs.containsKey(c)){
+                if(charStack.isEmpty()||charStack.pop() != pairs.get(c)){
+                    return false;
+                }
+            }
+        }
+        return charStack.isEmpty();
+    }
 }
