@@ -1,6 +1,4 @@
-package DataStructures.Leetcode.stack;
-
-import java.util.Arrays;
+package DataStructures.Leetcode.bruteforce;
 
 /**
  * There are n people in a line queuing to buy tickets, where the 0th person is at the front of the line and the (n - 1)th person is at the back of the line.
